@@ -1,0 +1,23 @@
+[
+  {
+    "name": "home",
+    "component": "ZdMenuLink",
+    "icon": "mdi-view-dashboard",
+    "label": "Home",
+    "route": "/"
+  },
+  {
+    "name": "zeedhi-page",
+    "component": "ZdMenuGroup",
+    "icon": "mdi-fire",
+    "label": "Menu Group",
+    "items": [
+      {
+        "name": "zeedhi-page",
+        "component": "ZdMenuLink",
+        "label": "JSON Page",
+        "route": "/zeedhi"
+      }
+    ]
+  }
+]
