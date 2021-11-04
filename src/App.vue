@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
-    <component v-if="$route.name !== 'login'" :is="menu.component" v-bind="menu"></component>
-    <component v-if="$route.name !== 'login'" :is="header.component" v-bind="header"></component>
+    <!-- <component v-if="$route.name == 'login'" :is="menu.component" v-bind="menu"></component>
+    <component v-if="$route.name == 'login'" :is="header.component" v-bind="header"></component> -->
 
     <v-main>
       <router-view :key="$route.path"/>

@@ -24,15 +24,15 @@ const router = new Router({
         local: true,
       }),
     },
-    {
-      path: '/login',
-      name: 'login',
-      component: ZdFramePage,
-      props: () => ({
-        path: 'login',
-        local: true,
-      }),
-    },
+    // {
+    //   path: '/login',
+    //   name: 'login',
+    //   component: ZdFramePage,
+    //   props: () => ({
+    //     path: 'login',
+    //     local: true,
+    //   }),
+    // },
     {
       path: '*',
       component: ZdFramePage,
