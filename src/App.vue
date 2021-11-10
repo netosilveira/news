@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
-    <!-- <component v-if="$route.name == 'login'" :is="menu.component" v-bind="menu"></component>
-    <component v-if="$route.name == 'login'" :is="header.component" v-bind="header"></component> -->
+    <component v-if="$route.name !== 'notfound'" :is="menu.component" v-bind="menu"></component>
+    <component v-if="$route.name !== 'notfound'" :is="header.component" v-bind="header"></component>
 
     <v-main>
       <router-view :key="$route.path"/>
@@ -29,10 +29,10 @@ import { IMenu, IHeader } from '@zeedhi/common';
 @Component
 export default class App extends Vue {
   public menu!: IMenu;
-
   public header!: IHeader;
 
   public created() {
+
     this.menu = {
       component: 'ZdMenu',
       name: 'main-menu',
@@ -41,7 +41,7 @@ export default class App extends Vue {
       clipped: true,
       floating: true,
       mini: false,
-      miniWidth: 58,
+      miniWidth: 70,
       mobileBreakpoint: 800,
       closeToMini: true,
       isLocal: true,
@@ -53,9 +53,11 @@ export default class App extends Vue {
       component: 'ZdHeader',
       name: 'main-header',
       app: true,
-      color: 'white',
+      color:"-",
       cssClass: 'main-header',
+      cssStyle: 'border-bottom: 3px solid purple;',
       height: 64,
+      elevation: 13,
       leftSlot: [
         {
           name: 'menu-button',
@@ -68,23 +70,18 @@ export default class App extends Vue {
             },
           },
         },
+      ],
+      centerSlot: [
         {
-          name: 'headerImage',
-          component: 'ImgLink',
-          src: '/img/logo.svg',
-          to: '/',
-        },
+          name: "textResult",
+          component: "ZdText",
+          text: "News Feed",
+          tag: "h1"
+        }
       ],
       rightSlot: [
-        {
-          name: 'logout-button',
-          component: 'ZdButton',
-          icon: true,
-          to: '/login',
-          iconName: 'mdi-logout'
-        }
       ]
-    };
+    }
   }
 }
 </script>
