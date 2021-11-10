@@ -11,8 +11,12 @@
     "@mdi/font": "^5.8.55",
     "@zeedhi/common": "*",
     "@zeedhi/core": "*",
+    "@zeedhi/teknisa-components-common": "^1.37.0",
+    "@zeedhi/teknisa-components-vuetify": "^1.37.0",
     "@zeedhi/vue": "*",
     "@zeedhi/vuetify": "*",
+    "axios": "^0.24.0",
+    "newsapi": "^2.4.1",
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "^0.10.0",
     "vue": "^2.6.12",
@@ -56,6 +60,6 @@
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12"
   },
-  "name": "zeedhi-example",
+  "name": "news-api",
   "description": "Powered by Zeedhi"
 }
