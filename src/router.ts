@@ -16,23 +16,41 @@ const router = new Router({
       component: () => import('./views/Home.vue'),
     },
     {
-      path: '/zeedhi',
-      name: 'zeedhi',
+      path: '/all',
+      name: 'all',
       component: ZdFramePage,
       props: () => ({
-        path: 'zeedhi',
+        path: 'all',
         local: true,
       }),
     },
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component: ZdFramePage,
-    //   props: () => ({
-    //     path: 'login',
-    //     local: true,
-    //   }),
-    // },
+    {
+      path: '/date',
+      name: 'date',
+      component: ZdFramePage,
+      props: () => ({
+        path: 'date',
+        local: true,
+      }),
+    },
+    {
+      path: '/category',
+      name: 'category',
+      component: ZdFramePage,
+      props: () => ({
+        path: 'category',
+        local: true,
+      }),
+    },
+    {
+      path: '/country',
+      name: 'country',
+      component: ZdFramePage,
+      props: () => ({
+        path: 'country',
+        local: true,
+      }),
+    },
     {
       path: '*',
       component: ZdFramePage,
