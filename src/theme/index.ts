@@ -1,5 +1,4 @@
 const theme = {
-  // dark: true,
   // colors: {
   //   light: {
   //     primary: '#FF0000',
