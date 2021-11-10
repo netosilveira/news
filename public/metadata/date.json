@@ -1,0 +1,216 @@
+{
+    "name": "basicContainer1",
+    "component": "ZdContainer",
+    "cssStyle": "",
+    "children": [
+        {
+            "name": "basicContainer2",
+            "component": "ZdContainer",
+            "children": [
+                {
+                    "name": "card",
+                    "component": "ZdCard",
+                    "cssStyle": "",
+                    "children": [
+                        {
+                            "name": "sd",
+                            "component": "ZdText",
+                            "text": "Digite uma data para filtrar as notícias",
+                            "tag": "h3",
+                            "cssStyle": ""
+                        },
+                        {
+                            "name": "sd",
+                            "component": "ZdText",
+                            "tag": "p",
+                            "cssStyle": "padding-top: 20px"
+                        },
+                        {
+                            "name": "col2",
+                            "component": "ZdCol",
+                            "cssClass": "text-center",
+                            "sm": 5,
+                            "children": [
+                                {
+                                    "name": "generalUsageForm",
+                                    "component": "ZdForm",
+                                    "children": [
+                                        {
+                                            "name": "datePicker",
+                                            "component": "ZdDate",
+                                            "label": "Data inicial",
+                                            "events": {
+                                                "onSelectDate": "{{DateController.selectDate}}"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "generalUsageForm",
+                                    "component": "ZdForm",
+                                    "children": [
+                                        {
+                                            "name": "datePicker",
+                                            "component": "ZdDate",
+                                            "label": "Data final",
+                                            "events": {
+                                                "onSelectDate": "{{DateController.selectDate1}}"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "buttonSubmit",
+                                    "component": "ZdButton",
+                                    "label": "Pesquisar",
+                                    "cssStyle": "display: flex;flex-wrap:wrap;place-content:start space-evenly;",
+                                    "events": {
+                                        "click": "{{DateController.request}}"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "iterableComponentWithinAnotherForm",
+                            "component": "TekCrudForm",
+                            "children": [
+                                {
+                                    "name": "IterablecomponentParent",
+                                    "component": "TekIterableComponentRender",
+                                    "rowPropName": "parentRow",
+                                    "datasource": {
+                                        "uniqueKey": "id",
+                                        "data": [
+                                            {
+                                                "id": "1",
+                                                "list": [
+                                                    {
+                                                        "id": "1"
+                                                    },
+                                                    {
+                                                        "id": "2"
+                                                    },
+                                                    {
+                                                        "id": "3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "componentMetadata": {
+                                        "name": "card_<<parentRow.id>>",
+                                        "component": "ZdCol",
+                                        "cssClass": "zd-ma-2",
+                                        "children": [
+                                            {
+                                                "name": "iterableChild_<<parentRow.id>>",
+                                                "component": "TekIterableComponentRender",
+                                                "rowPropName": "childRow",
+                                                "datasource": {
+                                                    "data": [
+                                                        {
+                                                            "id": 1,
+                                                            "author": "{{DateController.author}}",
+                                                            "title": "{{DateController.title}}",
+                                                            "description": "{{DateController.description}}",
+                                                            "url": "{{DateController.url}}"
+                                                        },
+                                                        {
+                                                            "id": 2,
+                                                            "author": "{{DateController.author2}}",
+                                                            "title": "{{DateController.title2}}",
+                                                            "description": "{{DateController.description2}}",
+                                                            "url": "{{DateController.url2}}"
+                                                        },
+                                                        {
+                                                            "id": 3,
+                                                            "author": "{{DateController.author3}}",
+                                                            "title": "{{DateController.title3}}",
+                                                            "description": "{{DateController.description3}}",
+                                                            "url": "{{DateController.url3}}"
+                                                        },
+                                                        {
+                                                            "id": 4,
+                                                            "author": "{{DateController.author4}}",
+                                                            "title": "{{DateController.title4}}",
+                                                            "description": "{{DateController.description4}}",
+                                                            "url": "{{DateController.url4}}"
+                                                        },
+                                                        {
+                                                            "id": 5,
+                                                            "author": "{{DateController.author5}}",
+                                                            "title": "{{DateController.title5}}",
+                                                            "description": "{{DateController.description5}}",
+                                                            "url": "{{DateController.url5}}"
+                                                        },
+                                                        {
+                                                            "id": 6,
+                                                            "author": "{{DateController.author6}}",
+                                                            "title": "{{DateController.title6}}",
+                                                            "description": "{{DateController.description6}}",
+                                                            "url": "{{DateController.url6}}"
+                                                        },
+                                                        {
+                                                            "id": 6,
+                                                            "author": "{{DateController.author7}}",
+                                                            "title": "{{DateController.title7}}",
+                                                            "description": "{{DateController.description7}}",
+                                                            "url": "{{DateController.url7}}"
+                                                        },
+                                                        {
+                                                            "id": 6,
+                                                            "author": "{{DateController.author8}}",
+                                                            "title": "{{DateController.title8}}",
+                                                            "description": "{{DateController.description8}}",
+                                                            "url": "{{DateController.url8}}"
+                                                        }
+                                                    ]
+                                                },
+                                                "componentMetadata": {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdCard",
+                                                    "cssStyle": "margin:20px; height: 340px; width: 340px;background-image: url(<<childRow.urlImage>>)",
+                                                    "children": [
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.title>>",
+                                                            "cssStyle": "padding-top: -10px",
+                                                            "tag": "h3"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.description>>",
+                                                            "cssStyle": "padding-top: 10px;text-align:left",
+                                                            "tag": "p"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.url>>",
+                                                            "tag": "p",
+                                                            "cssStyle": "padding-top: 30px"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.author>>",
+                                                            "tag": "p",
+                                                            "cssStyle": "padding-top: 100px;position:relative;float:right"
+                                                        }
+                                                    ]
+                                                },
+                                                "events": {}
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,191 @@
+{
+    "name": "basicContainer1",
+    "component": "ZdContainer",
+    "cssStyle": "",
+    "children": [
+        {
+            "name": "basicContainer2",
+            "component": "ZdContainer",
+            "children": [
+                {
+                    "name": "card",
+                    "component": "ZdCard",
+                    "cssStyle": "position:absolute;align:center;",
+                    "children": [
+                        {
+                            "name": "sd",
+                            "component": "ZdText",
+                            "text": "Digite qualquer palavra-chave para pesquisar notícias relacionadas",
+                            "tag": "h3",
+                            "cssStyle": ""
+                        },
+                        {
+                            "name": "col2",
+                            "component": "ZdCol",
+                            "cssClass": "",
+                            "sm": 5,
+                            "children": [
+                                {
+                                    "name": "textContent",
+                                    "component": "ZdTextInput",
+                                    "label": "",
+                                    "cssStyle": "width: 40%;",
+                                    "value": "{{AllController.text}}",
+                                    "children": []
+                                },
+                                {
+                                    "name": "buttonSubmit",
+                                    "component": "ZdButton",
+                                    "label": "Pesquisar",
+                                    "cssStyle": "display: flex;flex-wrap:wrap;place-content:start space-evenly;",
+                                    "events": {
+                                        "click": "{{AllController.request}}"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "iterableComponentWithinAnotherForm",
+                            "component": "TekCrudForm",
+                            "children": [
+                                {
+                                    "name": "IterablecomponentParent",
+                                    "component": "TekIterableComponentRender",
+                                    "rowPropName": "parentRow",
+                                    "datasource": {
+                                        "uniqueKey": "id",
+                                        "data": [
+                                            {
+                                                "id": "1",
+                                                "list": [
+                                                    {
+                                                        "id": "1"
+                                                    },
+                                                    {
+                                                        "id": "2"
+                                                    },
+                                                    {
+                                                        "id": "3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "componentMetadata": {
+                                        "name": "card_<<parentRow.id>>",
+                                        "component": "ZdCol",
+                                        "cssClass": "zd-ma-2",
+                                        "children": [
+                                            {
+                                                "name": "iterableChild_<<parentRow.id>>",
+                                                "component": "TekIterableComponentRender",
+                                                "rowPropName": "childRow",
+                                                "cssStyle": "",
+                                                "datasource": {
+                                                    "data": [
+                                                        {
+                                                            "id": 1,
+                                                            "author": "{{AllController.author}}",
+                                                            "title": "{{AllController.title}}",
+                                                            "description": "{{AllController.description}}",
+                                                            "url": "{{AllController.url}}"
+                                                        },
+                                                        {
+                                                            "id": 2,
+                                                            "author": "{{AllController.author2}}",
+                                                            "title": "{{AllController.title2}}",
+                                                            "description": "{{AllController.description2}}",
+                                                            "url": "{{AllController.url2}}"
+                                                        },
+                                                        {
+                                                            "id": 3,
+                                                            "author": "{{AllController.author3}}",
+                                                            "title": "{{AllController.title3}}",
+                                                            "description": "{{AllController.description3}}",
+                                                            "url": "{{AllController.url3}}"
+                                                        },
+                                                        {
+                                                            "id": 4,
+                                                            "author": "{{AllController.author4}}",
+                                                            "title": "{{AllController.title4}}",
+                                                            "description": "{{AllController.description4}}",
+                                                            "url": "{{AllController.url4}}"
+                                                        },
+                                                        {
+                                                            "id": 5,
+                                                            "author": "{{AllController.author5}}",
+                                                            "title": "{{AllController.title5}}",
+                                                            "description": "{{AllController.description5}}",
+                                                            "url": "{{AllController.url5}}"
+                                                        },
+                                                        {
+                                                            "id": 6,
+                                                            "author": "{{AllController.author6}}",
+                                                            "title": "{{AllController.title6}}",
+                                                            "description": "{{AllController.description6}}",
+                                                            "url": "{{AllController.url6}}"
+                                                        },
+                                                        {
+                                                            "id": 7,
+                                                            "author": "{{AllController.author7}}",
+                                                            "title": "{{AllController.title7}}",
+                                                            "description": "{{AllController.description7}}",
+                                                            "url": "{{AllController.url7}}"
+                                                        },
+                                                        {
+                                                            "id": 8,
+                                                            "author": "{{AllController.author8}}",
+                                                            "title": "{{AllController.title8}}",
+                                                            "description": "{{AllController.description8}}",
+                                                            "url": "{{AllController.url8}}"
+                                                        }
+                                                    ]
+                                                },
+                                                "componentMetadata": {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdCard",
+                                                    "cssStyle": "margin:20px; height: 350px; width: 350px;background-image: url(<<childRow.urlImage>>)",
+                                                    "children": [
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.title>>",
+                                                            "cssStyle": "padding-top: -10px",
+                                                            "tag": "h3"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.description>>",
+                                                            "cssStyle": "padding-top: 10px",
+                                                            "tag": "p"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.url>>",
+                                                            "tag": "p",
+                                                            "cssStyle": "padding-top: 30px"
+                                                        },
+                                                        {
+                                                            "name": "child_<<childRow.id>>",
+                                                            "component": "ZdText",
+                                                            "text": "<<childRow.author>>",
+                                                            "tag": "p",
+                                                            "cssStyle": "padding-top: 100px;position:relative;float:right"
+                                                        }
+                                                    ]
+                                                },
+                                                "events": {}
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

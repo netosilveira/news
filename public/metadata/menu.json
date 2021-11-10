@@ -2,22 +2,36 @@
   {
     "name": "home",
     "component": "ZdMenuLink",
-    "icon": "mdi-view-dashboard",
-    "label": "Home",
+    "icon": "mdi-presentation",
+    "label": "Início",
     "route": "/"
   },
   {
-    "name": "zeedhi-page",
-    "component": "ZdMenuGroup",
-    "icon": "mdi-fire",
-    "label": "Menu Group",
-    "items": [
-      {
-        "name": "zeedhi-page",
-        "component": "ZdMenuLink",
-        "label": "JSON Page",
-        "route": "/zeedhi"
-      }
-    ]
+    "name": "All",
+    "component": "ZdMenuLink",
+    "icon": "mdi-magnify",
+    "label": "Pesquisar em geral",
+    "route": "/all"
+  },
+  {
+    "name": "By date",
+    "component": "ZdMenuLink",
+    "icon": "mdi-magnify",
+    "label": "Pesquisar por data",
+    "route": "/date"
+  },
+  {
+    "name": "By category",
+    "component": "ZdMenuLink",
+    "icon": "mdi-magnify",
+    "label": "Pesquisar por categoria",
+    "route": "/category"
+  },
+  {
+    "name": "By country",
+    "component": "ZdMenuLink",
+    "icon": "mdi-magnify",
+    "label": "Pesquisar por país",
+    "route": "/country"
   }
 ]
