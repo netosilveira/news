@@ -1,213 +1,207 @@
 {
-    "name": "basicContainer1",
+    "name": "container",
     "component": "ZdContainer",
     "cssStyle": "",
     "children": [
         {
-            "name": "basicContainer2",
-            "component": "ZdContainer",
+            "name": "card",
+            "component": "ZdCard",
+            "cssStyle": "position:absolute;align:center;",
             "children": [
                 {
-                    "name": "card",
-                    "component": "ZdCard",
-                    "cssStyle": "position:absolute;align:center;",
-                    "children": [
+                    "name": "divided-list",
+                    "component": "ZdList",
+                    "divided": true,
+                    "twoLine": true,
+                    "items": [
                         {
-                            "name": "divided-list",
-                            "component": "ZdList",
-                            "divided": true,
-                            "twoLine": true,
-                            "items": [
-                                {
-                                    "name": "title",
-                                    "component": "ZdText",
-                                    "text": "Categorias",
-                                    "tag": "h2"
-                                },
-                                {
-                                    "name": "firstitem",
-                                    "component": "ZdListItem",
-                                    "title": "Ciência",
-                                    "subtitle": "",
-                                    "events": {
-                                        "click": "{{CategoryController.requestScience}}"
-                                    }
-                                },
-                                {
-                                    "name": "seconditem",
-                                    "component": "ZdListItem",
-                                    "title": "Negócios",
-                                    "subtitle": "",
-                                    "events": {
-                                        "click": "{{CategoryController.requestBusiness}}"
-                                    }
-                                },
-                                {
-                                    "name": "thirditem",
-                                    "component": "ZdListItem",
-                                    "title": "Entretenimento",
-                                    "subtitle": "",
-                                    "events": {
-                                        "click": "{{CategoryController.requestEntertainment}}"
-                                    }
-                                },
-                                {
-                                    "name": "fourthitem",
-                                    "component": "ZdListItem",
-                                    "title": "Tecnologia",
-                                    "subtitle": "",
-                                    "events": {
-                                        "click": "{{CategoryController.requestTechnology}}"
-                                    }
-                                },
-                                {
-                                    "name": "fourthitem",
-                                    "component": "ZdListItem",
-                                    "title": "Saúde",
-                                    "subtitle": "",
-                                    "events": {
-                                        "click": "{{CategoryController.requestHealth}}"
-                                    }
-                                }
-                            ]
+                            "name": "title",
+                            "component": "ZdText",
+                            "text": "Categorias",
+                            "tag": "h2"
                         },
                         {
-                            "name": "iterableComponentWithinAnotherForm",
-                            "component": "TekCrudForm",
-                            "children": [
-                                {
-                                    "name": "IterablecomponentParent",
-                                    "component": "TekIterableComponentRender",
-                                    "rowPropName": "parentRow",
-                                    "datasource": {
-                                        "uniqueKey": "id",
-                                        "data": [
+                            "name": "firstitem",
+                            "component": "ZdListItem",
+                            "title": "Ciência",
+                            "subtitle": "",
+                            "events": {
+                                "click": "{{CategoryController.requestScience}}"
+                            }
+                        },
+                        {
+                            "name": "seconditem",
+                            "component": "ZdListItem",
+                            "title": "Negócios",
+                            "subtitle": "",
+                            "events": {
+                                "click": "{{CategoryController.requestBusiness}}"
+                            }
+                        },
+                        {
+                            "name": "thirditem",
+                            "component": "ZdListItem",
+                            "title": "Entretenimento",
+                            "subtitle": "",
+                            "events": {
+                                "click": "{{CategoryController.requestEntertainment}}"
+                            }
+                        },
+                        {
+                            "name": "fourthitem",
+                            "component": "ZdListItem",
+                            "title": "Tecnologia",
+                            "subtitle": "",
+                            "events": {
+                                "click": "{{CategoryController.requestTechnology}}"
+                            }
+                        },
+                        {
+                            "name": "fourthitem",
+                            "component": "ZdListItem",
+                            "title": "Saúde",
+                            "subtitle": "",
+                            "events": {
+                                "click": "{{CategoryController.requestHealth}}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "iterableComponentWithinAnotherForm",
+                    "component": "TekCrudForm",
+                    "children": [
+                        {
+                            "name": "IterablecomponentParent",
+                            "component": "TekIterableComponentRender",
+                            "rowPropName": "parentRow",
+                            "datasource": {
+                                "uniqueKey": "id",
+                                "data": [
+                                    {
+                                        "id": "1",
+                                        "list": [
                                             {
-                                                "id": "1",
-                                                "list": [
-                                                    {
-                                                        "id": "1"
-                                                    },
-                                                    {
-                                                        "id": "2"
-                                                    },
-                                                    {
-                                                        "id": "3"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "componentMetadata": {
-                                        "name": "card_<<parentRow.id>>",
-                                        "component": "ZdCol",
-                                        "cssClass": "zd-ma-2",
-                                        "children": [
+                                                "id": "1"
+                                            },
                                             {
-                                                "name": "iterableChild_<<parentRow.id>>",
-                                                "component": "TekIterableComponentRender",
-                                                "rowPropName": "childRow",
-                                                "datasource": {
-                                                    "data": [
-                                                        {
-                                                            "id": 1,
-                                                            "author": "{{CategoryController.author}}",
-                                                            "title": "{{CategoryController.title}}",
-                                                            "description": "{{CategoryController.description}}",
-                                                            "url": "{{CategoryController.url}}"
-                                                        },
-                                                        {
-                                                            "id": 2,
-                                                            "author": "{{CategoryController.author2}}",
-                                                            "title": "{{CategoryController.title2}}",
-                                                            "description": "{{CategoryController.description2}}",
-                                                            "url": "{{CategoryController.url2}}"
-                                                        },
-                                                        {
-                                                            "id": 3,
-                                                            "author": "{{CategoryController.author3}}",
-                                                            "title": "{{CategoryController.title3}}",
-                                                            "description": "{{CategoryController.description3}}",
-                                                            "url": "{{CategoryController.url3}}"
-                                                        },
-                                                        {
-                                                            "id": 4,
-                                                            "author": "{{CategoryController.author4}}",
-                                                            "title": "{{CategoryController.title4}}",
-                                                            "description": "{{CategoryController.description4}}",
-                                                            "url": "{{CategoryController.url4}}"
-                                                        },
-                                                        {
-                                                            "id": 5,
-                                                            "author": "{{CategoryController.author5}}",
-                                                            "title": "{{CategoryController.title5}}",
-                                                            "description": "{{CategoryController.description5}}",
-                                                            "url": "{{CategoryController.url5}}"
-                                                        },
-                                                        {
-                                                            "id": 8,
-                                                            "author": "{{CategoryController.author6}}",
-                                                            "title": "{{CategoryController.title6}}",
-                                                            "description": "{{CategoryController.description6}}",
-                                                            "url": "{{CategoryController.url6}}"
-                                                        },
-                                                        {
-                                                            "id": 7,
-                                                            "author": "{{CategoryController.author7}}",
-                                                            "title": "{{CategoryController.title7}}",
-                                                            "description": "{{CategoryController.description7}}",
-                                                            "url": "{{CategoryController.url7}}"
-                                                        },
-                                                        {
-                                                            "id": 8,
-                                                            "author": "{{CategoryController.author8}}",
-                                                            "title": "{{CategoryController.title8}}",
-                                                            "description": "{{CategoryController.description8}}",
-                                                            "url": "{{CategoryController.url8}}"
-                                                        }
-                                                    ]
-                                                },
-                                                "componentMetadata": {
-                                                    "name": "child_<<childRow.id>>",
-                                                    "component": "ZdCard",
-                                                    "cssStyle": "margin:20px; height: 350px; width: 350px;background-image: url(<<childRow.urlImage>>)",
-                                                    "children": [
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.title>>",
-                                                            "cssStyle": "padding-top: -10px",
-                                                            "tag": "h3"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.description>>",
-                                                            "cssStyle": "padding-top: 10px;text-align:left",
-                                                            "tag": "p"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.url>>",
-                                                            "tag": "p",
-                                                            "cssStyle": "padding-top: 30px"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.author>>",
-                                                            "tag": "p",
-                                                            "cssStyle": "padding-top: 100px;position:relative;float:right"
-                                                        }
-                                                    ]
-                                                },
-                                                "events": {}
+                                                "id": "2"
+                                            },
+                                            {
+                                                "id": "3"
                                             }
                                         ]
                                     }
-                                }
-                            ]
+                                ]
+                            },
+                            "componentMetadata": {
+                                "name": "card_<<parentRow.id>>",
+                                "component": "ZdCol",
+                                "cssClass": "zd-ma-2",
+                                "children": [
+                                    {
+                                        "name": "iterableChild_<<parentRow.id>>",
+                                        "component": "TekIterableComponentRender",
+                                        "rowPropName": "childRow",
+                                        "datasource": {
+                                            "data": [
+                                                {
+                                                    "id": 1,
+                                                    "author": "{{CategoryController.author}}",
+                                                    "title": "{{CategoryController.title}}",
+                                                    "description": "{{CategoryController.description}}",
+                                                    "url": "{{CategoryController.url}}"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "author": "{{CategoryController.author2}}",
+                                                    "title": "{{CategoryController.title2}}",
+                                                    "description": "{{CategoryController.description2}}",
+                                                    "url": "{{CategoryController.url2}}"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "author": "{{CategoryController.author3}}",
+                                                    "title": "{{CategoryController.title3}}",
+                                                    "description": "{{CategoryController.description3}}",
+                                                    "url": "{{CategoryController.url3}}"
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "author": "{{CategoryController.author4}}",
+                                                    "title": "{{CategoryController.title4}}",
+                                                    "description": "{{CategoryController.description4}}",
+                                                    "url": "{{CategoryController.url4}}"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "author": "{{CategoryController.author5}}",
+                                                    "title": "{{CategoryController.title5}}",
+                                                    "description": "{{CategoryController.description5}}",
+                                                    "url": "{{CategoryController.url5}}"
+                                                },
+                                                {
+                                                    "id": 8,
+                                                    "author": "{{CategoryController.author6}}",
+                                                    "title": "{{CategoryController.title6}}",
+                                                    "description": "{{CategoryController.description6}}",
+                                                    "url": "{{CategoryController.url6}}"
+                                                },
+                                                {
+                                                    "id": 7,
+                                                    "author": "{{CategoryController.author7}}",
+                                                    "title": "{{CategoryController.title7}}",
+                                                    "description": "{{CategoryController.description7}}",
+                                                    "url": "{{CategoryController.url7}}"
+                                                },
+                                                {
+                                                    "id": 8,
+                                                    "author": "{{CategoryController.author8}}",
+                                                    "title": "{{CategoryController.title8}}",
+                                                    "description": "{{CategoryController.description8}}",
+                                                    "url": "{{CategoryController.url8}}"
+                                                }
+                                            ]
+                                        },
+                                        "componentMetadata": {
+                                            "name": "child_<<childRow.id>>",
+                                            "component": "ZdCard",
+                                            "cssStyle": "margin:20px; height: 350px; width: 350px;background-image: url(<<childRow.urlImage>>)",
+                                            "children": [
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.title>>",
+                                                    "cssStyle": "padding-top: -10px",
+                                                    "tag": "h3"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.description>>",
+                                                    "cssStyle": "padding-top: 10px;text-align:left",
+                                                    "tag": "p"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.url>>",
+                                                    "tag": "p",
+                                                    "cssStyle": "padding-top: 30px"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.author>>",
+                                                    "tag": "p",
+                                                    "cssStyle": "padding-top: 100px;position:relative;float:right"
+                                                }
+                                            ]
+                                        },
+                                        "events": {}
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }

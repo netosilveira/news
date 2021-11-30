@@ -1,200 +1,194 @@
 {
-    "name": "basicContainer1",
+    "name": "container",
     "component": "ZdContainer",
     "cssStyle": "",
     "children": [
         {
-            "name": "basicContainer2",
-            "component": "ZdContainer",
+            "name": "card",
+            "component": "ZdCard",
+            "cssStyle": "position:absolute;align:center;",
             "children": [
                 {
-                    "name": "card",
-                    "component": "ZdCard",
-                    "cssStyle": "position:absolute;align:center;",
-                    "children": [
+                    "name": "divided-list",
+                    "component": "ZdList",
+                    "divided": true,
+                    "twoLine": true,
+                    "items": [
                         {
-                            "name": "divided-list",
-                            "component": "ZdList",
-                            "divided": true,
-                            "twoLine": true,
-                            "items": [
-                                {
-                                    "name": "title",
-                                    "component": "ZdText",
-                                    "text": "Países",
-                                    "tag": "h2"
-                                },
-                                {
-                                    "name": "firstitem",
-                                    "component": "ZdListItem",
-                                    "title": "Brasil : pt",
-                                    "events": {
-                                        "click": "{{CountryController.requestPt}}"
-                                    }
-                                },
-                                {
-                                    "name": "seconditem",
-                                    "component": "ZdListItem",
-                                    "title": "Germany : de",
-                                    "events": {
-                                        "click": "{{CountryController.requestDe}}"
-                                    }
-                                },
-                                {
-                                    "name": "thirditem",
-                                    "component": "ZdListItem",
-                                    "title": "French : fr",
-                                    "events": {
-                                        "click": "{{CountryController.requestFr}}"
-                                    }
-                                },
-                                {
-                                    "name": "fourthitem",
-                                    "component": "ZdListItem",
-                                    "title": "Russian : ru",
-                                    "events": {
-                                        "click": "{{CountryController.requestRu}}"
-                                    }
-                                }
-                            ]
+                            "name": "title",
+                            "component": "ZdText",
+                            "text": "Países",
+                            "tag": "h2"
                         },
                         {
-                            "name": "iterableComponentWithinAnotherForm",
-                            "component": "TekCrudForm",
-                            "children": [
-                                {
-                                    "name": "IterablecomponentParent",
-                                    "component": "TekIterableComponentRender",
-                                    "rowPropName": "parentRow",
-                                    "datasource": {
-                                        "uniqueKey": "id",
-                                        "data": [
+                            "name": "firstitem",
+                            "component": "ZdListItem",
+                            "title": "Brasil : pt",
+                            "events": {
+                                "click": "{{CountryController.requestPt}}"
+                            }
+                        },
+                        {
+                            "name": "seconditem",
+                            "component": "ZdListItem",
+                            "title": "Germany : de",
+                            "events": {
+                                "click": "{{CountryController.requestDe}}"
+                            }
+                        },
+                        {
+                            "name": "thirditem",
+                            "component": "ZdListItem",
+                            "title": "French : fr",
+                            "events": {
+                                "click": "{{CountryController.requestFr}}"
+                            }
+                        },
+                        {
+                            "name": "fourthitem",
+                            "component": "ZdListItem",
+                            "title": "Russian : ru",
+                            "events": {
+                                "click": "{{CountryController.requestRu}}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "iterableComponentWithinAnotherForm",
+                    "component": "TekCrudForm",
+                    "children": [
+                        {
+                            "name": "IterablecomponentParent",
+                            "component": "TekIterableComponentRender",
+                            "rowPropName": "parentRow",
+                            "datasource": {
+                                "uniqueKey": "id",
+                                "data": [
+                                    {
+                                        "id": "1",
+                                        "list": [
                                             {
-                                                "id": "1",
-                                                "list": [
-                                                    {
-                                                        "id": "1"
-                                                    },
-                                                    {
-                                                        "id": "2"
-                                                    },
-                                                    {
-                                                        "id": "3"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "componentMetadata": {
-                                        "name": "card_<<parentRow.id>>",
-                                        "component": "ZdCol",
-                                        "cssClass": "zd-ma-2",
-                                        "children": [
+                                                "id": "1"
+                                            },
                                             {
-                                                "name": "iterableChild_<<parentRow.id>>",
-                                                "component": "TekIterableComponentRender",
-                                                "rowPropName": "childRow",
-                                                "datasource": {
-                                                    "data": [
-                                                        {
-                                                            "id": 1,
-                                                            "author": "{{CountryController.author}}",
-                                                            "title": "{{CountryController.title}}",
-                                                            "description": "{{CountryController.description}}",
-                                                            "url": "{{CountryController.url}}"
-                                                        },
-                                                        {
-                                                            "id": 2,
-                                                            "author": "{{CountryController.author2}}",
-                                                            "title": "{{CountryController.title2}}",
-                                                            "description": "{{CountryController.description2}}",
-                                                            "url": "{{CountryController.url2}}"
-                                                        },
-                                                        {
-                                                            "id": 3,
-                                                            "author": "{{CountryController.author3}}",
-                                                            "title": "{{CountryController.title3}}",
-                                                            "description": "{{CountryController.description3}}",
-                                                            "url": "{{CountryController.url3}}"
-                                                        },
-                                                        {
-                                                            "id": 4,
-                                                            "author": "{{CountryController.author4}}",
-                                                            "title": "{{CountryController.title4}}",
-                                                            "description": "{{CountryController.description4}}",
-                                                            "url": "{{CountryController.url4}}"
-                                                        },
-                                                        {
-                                                            "id": 5,
-                                                            "author": "{{CountryController.author5}}",
-                                                            "title": "{{CountryController.title5}}",
-                                                            "description": "{{CountryController.description5}}",
-                                                            "url": "{{CountryController.url5}}"
-                                                        },
-                                                        {
-                                                            "id": 6,
-                                                            "author": "{{CountryController.author6}}",
-                                                            "title": "{{CountryController.title6}}",
-                                                            "description": "{{CountryController.description6}}",
-                                                            "url": "{{CountryController.url6}}"
-                                                        },
-                                                        {
-                                                            "id": 7,
-                                                            "author": "{{CountryController.author7}}",
-                                                            "title": "{{CountryController.title7}}",
-                                                            "description": "{{CountryController.description7}}",
-                                                            "url": "{{CountryController.url7}}"
-                                                        },
-                                                        {
-                                                            "id": 8,
-                                                            "author": "{{CountryController.author8}}",
-                                                            "title": "{{CountryController.title8}}",
-                                                            "description": "{{CountryController.description8}}",
-                                                            "url": "{{CountryController.url8}}"
-                                                        }
-                                                    ]
-                                                },
-                                                "componentMetadata": {
-                                                    "name": "child_<<childRow.id>>",
-                                                    "component": "ZdCard",
-                                                    "cssStyle": "margin:20px; height: 350px; width: 350px;background-image: url(<<childRow.urlImage>>)",
-                                                    "children": [
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.title>>",
-                                                            "cssStyle": "padding-top: -10px",
-                                                            "tag": "h3"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.description>>",
-                                                            "cssStyle": "padding-top: 10px;text-align:left",
-                                                            "tag": "p"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.url>>",
-                                                            "tag": "p",
-                                                            "cssStyle": "padding-top: 30px"
-                                                        },
-                                                        {
-                                                            "name": "child_<<childRow.id>>",
-                                                            "component": "ZdText",
-                                                            "text": "<<childRow.author>>",
-                                                            "tag": "p",
-                                                            "cssStyle": "padding-top: 100px;position:relative;float:right"
-                                                        }
-                                                    ]
-                                                },
-                                                "events": {}
+                                                "id": "2"
+                                            },
+                                            {
+                                                "id": "3"
                                             }
                                         ]
                                     }
-                                }
-                            ]
+                                ]
+                            },
+                            "componentMetadata": {
+                                "name": "card_<<parentRow.id>>",
+                                "component": "ZdCol",
+                                "cssClass": "zd-ma-2",
+                                "children": [
+                                    {
+                                        "name": "iterableChild_<<parentRow.id>>",
+                                        "component": "TekIterableComponentRender",
+                                        "rowPropName": "childRow",
+                                        "datasource": {
+                                            "data": [
+                                                {
+                                                    "id": 1,
+                                                    "author": "{{CountryController.author}}",
+                                                    "title": "{{CountryController.title}}",
+                                                    "description": "{{CountryController.description}}",
+                                                    "url": "{{CountryController.url}}"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "author": "{{CountryController.author2}}",
+                                                    "title": "{{CountryController.title2}}",
+                                                    "description": "{{CountryController.description2}}",
+                                                    "url": "{{CountryController.url2}}"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "author": "{{CountryController.author3}}",
+                                                    "title": "{{CountryController.title3}}",
+                                                    "description": "{{CountryController.description3}}",
+                                                    "url": "{{CountryController.url3}}"
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "author": "{{CountryController.author4}}",
+                                                    "title": "{{CountryController.title4}}",
+                                                    "description": "{{CountryController.description4}}",
+                                                    "url": "{{CountryController.url4}}"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "author": "{{CountryController.author5}}",
+                                                    "title": "{{CountryController.title5}}",
+                                                    "description": "{{CountryController.description5}}",
+                                                    "url": "{{CountryController.url5}}"
+                                                },
+                                                {
+                                                    "id": 6,
+                                                    "author": "{{CountryController.author6}}",
+                                                    "title": "{{CountryController.title6}}",
+                                                    "description": "{{CountryController.description6}}",
+                                                    "url": "{{CountryController.url6}}"
+                                                },
+                                                {
+                                                    "id": 7,
+                                                    "author": "{{CountryController.author7}}",
+                                                    "title": "{{CountryController.title7}}",
+                                                    "description": "{{CountryController.description7}}",
+                                                    "url": "{{CountryController.url7}}"
+                                                },
+                                                {
+                                                    "id": 8,
+                                                    "author": "{{CountryController.author8}}",
+                                                    "title": "{{CountryController.title8}}",
+                                                    "description": "{{CountryController.description8}}",
+                                                    "url": "{{CountryController.url8}}"
+                                                }
+                                            ]
+                                        },
+                                        "componentMetadata": {
+                                            "name": "child_<<childRow.id>>",
+                                            "component": "ZdCard",
+                                            "cssStyle": "margin:20px; height: 350px; width: 350px;background-image: url(<<childRow.urlImage>>)",
+                                            "children": [
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.title>>",
+                                                    "cssStyle": "padding-top: -10px",
+                                                    "tag": "h3"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.description>>",
+                                                    "cssStyle": "padding-top: 10px;text-align:left",
+                                                    "tag": "p"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.url>>",
+                                                    "tag": "p",
+                                                    "cssStyle": "padding-top: 30px"
+                                                },
+                                                {
+                                                    "name": "child_<<childRow.id>>",
+                                                    "component": "ZdText",
+                                                    "text": "<<childRow.author>>",
+                                                    "tag": "p",
+                                                    "cssStyle": "padding-top: 100px;position:relative;float:right"
+                                                }
+                                            ]
+                                        },
+                                        "events": {}
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
