@@ -1,12 +1,12 @@
 {
     "name": "container",
     "component": "ZdContainer",
-    "cssStyle": "",
+    "cssStyle": "text-align:center;width:190vh;height:100vh",
     "children": [
         {
             "name": "card",
             "component": "ZdCard",
-            "cssStyle": "",
+            "cssStyle": "position:absolute;align:center;",
             "children": [
                 {
                     "name": "sd",
